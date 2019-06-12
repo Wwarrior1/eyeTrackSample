@@ -1,2 +1,2 @@
-include ':openCVLibrary300'
 include ':eyeTrackSample'
+include ':openCV410'

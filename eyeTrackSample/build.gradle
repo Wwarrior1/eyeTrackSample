@@ -1,25 +1,27 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 28
+    buildToolsVersion '28.0.3'
 
     defaultConfig {
         applicationId "cz.nakoncisveta.eyetracksample"
-        minSdkVersion 8
-        targetSdkVersion 8
-
-
+        minSdkVersion 21
+        targetSdkVersion 28
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+        debug {
+            minifyEnabled = true
+        }
     }
+    sourceSets { main { jni.srcDirs = ['src/main/jni', 'src/main/jniLibs/'] } }
 }
 
 dependencies {
-    compile project(':openCVLibrary300')
+    compile project(':openCV410')
 }
